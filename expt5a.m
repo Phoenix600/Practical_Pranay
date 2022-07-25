@@ -1,0 +1,28 @@
+clc;
+clear all;
+close all;
+N=input('enter the value of N : ');
+x=input('enter the input sequence X(n) : ');
+t=0:N-1;
+subplot(3,3,1);
+stem(t,x);
+xlabel('Time');
+ylabel('Amplitude');
+title("INPUT SIGNAL");
+grid on;
+y = fft(x,N);
+yr=real(y);
+yi=imag(y);
+subplot(3,1,2);
+stem(t,yr);
+xlabel('Time');
+ylabel('Amplitude');
+title("OUTPUT SIGNAL REAL");
+grid on;
+subplot(3,1,3);
+stem(t,yi);
+xlabel('Time');
+ylabel('Amplitude');
+title("OUTPUT SIGNAL IMAGINARY");
+grid on;
+
